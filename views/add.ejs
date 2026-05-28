@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Log Session</title>
+</head>
+<body class="bg-light">
+    <%- include('partials/navbar') %>
+
+    <div class="container mt-4" style="max-width: 400px;">
+        <div class="card bg-dark text-white p-3">
+            <h4 class="mb-3">LOG NEW SESSION</h4>
+            
+            <form action="/add" method="POST">
+                <div class="mb-2">
+                    <label class="form-label">Position Played:</label>
+                    <select name="position" class="form-select" required>
+                        <option value="GS">GS</option>
+                        <option value="GA">GA</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="mb-2">
+                    <label class="form-label">Goals Scored:</label>
+                    <input type="number" name="goals" class="form-control" required>
+                </div>
+
+                <div class="mb-2">
+                    <label class="form-label">Total Attempts:</label>
+                    <input type="number" name="total" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Coach's Feedback:</label>
+                    <textarea name="feedback" class="form-control" rows="2"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-warning w-100 fw-bold">SAVE SESSION</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
